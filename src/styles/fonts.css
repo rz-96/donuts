@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'sans-serif';
+  src: url('../../public/fonts/LarsseitMedium.eot');
+  src: url('../../public/fonts/LarsseitMedium.eot') format('embedded-opentype'),
+  url('../../public/fonts/LarsseitMedium.woff2') format('woff2'),
+  url('../../public/fonts/LarsseitMedium.woff') format('woff'),
+  url('../../public/fonts/LarsseitMedium.ttf') format('truetype'),
+  url('../../public/fonts/LarsseitMedium.svg#larsseitmedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'sans-serif';
+  src: url('../../public/fonts/Larsseit.eot');
+  src: url('../../public/fonts/Larsseit.eot') format('embedded-opentype'),
+  url('../../public/fonts/Larsseit.woff2') format('woff2'),
+  url('../../public/fonts/Larsseit.woff') format('woff'),
+  url('../../public/fonts/Larsseit.ttf') format('truetype'),
+  url('../../public/fonts/Larsseit.svg#larsseitregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

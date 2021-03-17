@@ -1,0 +1,12 @@
+{
+  "appCommand": "yarn dev",
+  "appInitDelay": 2000,
+  "clientScripts": [
+    { "module": "@testing-library/dom/dist/@testing-library/dom.umd.js" }
+  ],
+  "hostname": "localhost",
+  "ssl": {
+    "pfx": "./src/tests/testingdomain.pfx",
+    "passphrase": "test1234"
+  }
+}

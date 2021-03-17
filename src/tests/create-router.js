@@ -1,0 +1,35 @@
+const createRouter = ({
+  basePath = '',
+  pathname = '/',
+  route = '/',
+  asPath = '/',
+  query = {},
+  push = () => {},
+  replace = () => {},
+  reload = () => {},
+  back = () => {},
+  prefetch = () => {},
+  beforePopState = () => {},
+  events = {
+    on: () => {},
+    off: () => {},
+    emit: () => {},
+  },
+  isFallback = false,
+} = {}) => ({
+  basePath,
+  pathname,
+  route,
+  asPath,
+  query,
+  push,
+  replace,
+  reload,
+  back,
+  prefetch,
+  beforePopState,
+  events,
+  isFallback,
+});
+
+export default createRouter;
