@@ -1,6 +1,7 @@
 export const ROOT = 'https://be-shopsystem.herokuapp.com/';
 
 // export const ROOT = 'http://localhost:3030/';
+
 export const PRODUCTS = ROOT + 'products';
 export const OPENING_TIMES = ROOT + 'opening-times';
 
