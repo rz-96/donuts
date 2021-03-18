@@ -8,4 +8,5 @@ export const OPENING_TIMES = ROOT + 'opening-times';
 export const CART_ITEMS = ROOT + 'cart-items';
 export const PAYMENTS = ROOT + 'payments';
 export const ORDERS = ROOT + 'orders';
+
 export const PLACES = ROOT + 'places';
