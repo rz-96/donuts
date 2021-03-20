@@ -28,7 +28,7 @@ const HomePageComponent = ({
       <title>{t('common:ra-software')}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className="grid grid-cols-4 gap-4 dark:bg-black  ">
+    <div className="grid grid-cols-4 dark:bg-black  ">
       <ShopClosed />
       <OrderConfirmation />
       <MenuContainer />

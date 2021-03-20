@@ -1,4 +1,4 @@
-import { Button, Modal } from '@material-ui/core';
+import { Modal } from '@material-ui/core';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 import { rem } from 'polished';
 import React from 'react';
@@ -36,16 +36,13 @@ function ShopClosedComponent({ open, onClickClose }) {
             Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.
           </h1>
 
-          <Button
+          <button
+            className="btn bg-white text-black hover:text-white"
             style={{ marginTop: rem(10), marginBottom: rem(13) }}
-            variant="contained"
-            size="medium"
-            color="white"
-            backgroundColor="red"
             onClick={onClickClose}
           >
             Alles klar!
-          </Button>
+          </button>
         </div>
       </Modal>
     </div>

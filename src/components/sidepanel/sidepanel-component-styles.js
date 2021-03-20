@@ -1,4 +1,3 @@
-import { rem } from 'polished';
 import styled from 'styled-components';
 
 export const Title = styled.h1`
@@ -14,7 +13,6 @@ export const Item = styled.div`
 `;
 
 export const Root = styled.div`
-  padding: ${rem(10)};
   width: 100%;
 `;
 
