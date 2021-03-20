@@ -60,7 +60,7 @@ describe('add products to cart', () => {
     cy.findByRole('button', { name: 'first description 20.00€' }).click();
     cy.findByRole('button', { name: 'Hinzufügen' }).click();
     cy.findByText('1 x first - 20.00€').should('exist');
-    cy.findByRole('button', { name: 'delete' }).click();
+    cy.get('[data-test=delete-button]').click();
     cy.findByText('1 x first - 20.00€').should('not.exist');
   });
 });

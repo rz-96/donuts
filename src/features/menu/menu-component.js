@@ -1,4 +1,3 @@
-import { Button } from '@material-ui/core';
 import { Label } from 'components/label/label-component-styles';
 import { Select } from 'components/select/select-container';
 import { rem } from 'polished';
@@ -102,21 +101,9 @@ function MenuComponent({
                   </div>
                 ))}
               <div className="flex flex-row mt-4">
-                <Button
-                  onClick={onClickAdd}
-                  className="mr-2"
-                  style={{
-                    marginRight: rem(10),
-                    width: rem(150),
-                    color: 'white',
-                    backgroundColor: 'red',
-                  }}
-                  variant="outlined"
-                  color="primary"
-                  size="large"
-                >
+                <button className="btn" onClick={onClickAdd}>
                   Hinzufügen
-                </Button>
+                </button>
                 <button
                   onClick={onClickAbort}
                   style={{

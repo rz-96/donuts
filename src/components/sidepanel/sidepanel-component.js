@@ -1,21 +1,16 @@
-import { Button } from '@material-ui/core';
 import { EditOutlined } from '@material-ui/icons';
 import { CartContainer } from 'features/cart/cart-container';
 import { CreateOrderContainer } from 'features/create-order/create-order-container';
 import React from 'react';
 
-import {
-  Item,
-  ItemPrice,
-  ItemTitle,
-  Root,
-  Title,
-} from './sidepanel-component-styles';
+import { Item, ItemPrice, ItemTitle, Root } from './sidepanel-component-styles';
 
 function SidePanelComponent({ orderType, onClickChangeOrderType, t }) {
   return (
-    <Root className="dark:bg-black dark:text-white">
-      <Title className="dark:text-white">{t('common:your-order')}</Title>
+    <Root className="dark:bg-black dark:text-white p-6">
+      <p className="dark:text-white text-lg font-bold">
+        {t('common:your-order')}
+      </p>
       <Item>
         <ItemTitle className="dark:text-white">
           {t('common:delivery-fee')}
@@ -23,15 +18,10 @@ function SidePanelComponent({ orderType, onClickChangeOrderType, t }) {
         <ItemPrice className="dark:text-white">UPDATEN</ItemPrice>
       </Item>
       <CartContainer />
-      <Button
-        onClick={onClickChangeOrderType}
-        startIcon={<EditOutlined />}
-        variant="contained"
-        color="primary"
-        style={{ width: '100%' }}
-      >
+      <button className="btn w-full" onClick={onClickChangeOrderType}>
+        <EditOutlined />
         {orderType === 'delivery' ? 'Liefern' : 'Abholen'}
-      </Button>
+      </button>
       <CreateOrderContainer />
     </Root>
   );

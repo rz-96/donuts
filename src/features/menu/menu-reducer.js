@@ -21,7 +21,7 @@ const initialState = {
 };
 
 const handleSetMenuProduct = (state, { payload }) => {
-  if (!payload.menu) return { ...state, product: payload };
+  if (!payload.menu) return { ...state, product: payload, selections: {} };
   const extras = map(
     extra => ({ [extra._id]: extra.options[0] }),
     payload.menu.extras,
