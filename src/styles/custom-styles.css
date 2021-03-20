@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: "black";
+  --color-secondary: "red";
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+  @apply bg-white;
+}
+
+body {
+  margin: 0;
+}
+

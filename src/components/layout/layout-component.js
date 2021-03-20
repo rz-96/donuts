@@ -9,10 +9,14 @@ const LayoutComponent = ({ children }) => (
     {children}
 
     <style jsx global>{`
+      @tailwind base;
+
       html,
       body,
       #__next {
         height: 100%;
+        @apply bg-gray-50 dark:bg-gray-900;
+        //TODO: CHANGE BACK WHEN CHANGING TO DARK MODE;
       }
       body {
         margin: 0;

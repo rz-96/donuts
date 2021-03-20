@@ -17,7 +17,7 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open }) {
           </span>
 
           <div
-            className="inline-block align-bottom bg-white rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-1/5"
+            className="inline-block align-bottom bg-white dark:bg-black rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-1/5"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-headline"
@@ -26,7 +26,7 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open }) {
               <div className="justify-center sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4">
                   <h3
-                    className="text-2xl text-center leading-6 font-medium text-gray-900"
+                    className="text-2xl text-center leading-6 font-medium text-gray-900 dark:text-white"
                     id="modal-headline"
                   >
                     Abholen oder Liefern?
@@ -34,7 +34,7 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open }) {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center rounded-lg bg-white px-4 py-3 sm:px-6 ">
+            <div className="flex justify-center rounded-lg bg-white  dark:bg-black px-4 py-3 sm:px-6 ">
               <button
                 data-test="pickup"
                 name="Abholen"

@@ -16,7 +16,7 @@ function PostcodeInput({ onClick, places, postcode, onChangePostcode }) {
         </span>
 
         <div
-          className="inline-block align-center bg-white rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+          className="inline-block align-center bg-white dark:bg-black rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-headline"
@@ -27,6 +27,7 @@ function PostcodeInput({ onClick, places, postcode, onChangePostcode }) {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
+                  className="dark:text-white"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
@@ -46,7 +47,7 @@ function PostcodeInput({ onClick, places, postcode, onChangePostcode }) {
               </div>
               <div className="w-full mt-3 text-left sm:mt-0 sm:ml-4 sm:text-left">
                 <h3
-                  className="text-lg leading-6 font-medium text-gray-900"
+                  className="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-1"
                   id="modal-headline"
                 >
                   Postleitzahl angeben
@@ -70,7 +71,7 @@ function PostcodeInput({ onClick, places, postcode, onChangePostcode }) {
               </div>
             </div>
           </div>
-          <div className="rounded-lg bg-white px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"></div>
+          <div className="rounded-lg dark:bg-black bg-white px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"></div>
         </div>
       </div>
     </div>

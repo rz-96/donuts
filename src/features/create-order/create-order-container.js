@@ -113,7 +113,7 @@ const mapFormikBagToProps = ({
       city,
       orderTime,
     }),
-  onChangePaymentType: e => setFieldValue('paymentType', e.target.value),
+  onChangePaymentType: value => setFieldValue('paymentType', value),
   onSubmit: handleSubmit,
   isCartEmpty,
   isCreating,

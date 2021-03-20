@@ -4,22 +4,25 @@ function SelectComponent({
   values,
   isOpen,
   onClickSelect,
+  onBlurSelect,
   onChange,
   ...rest
 }) {
   return (
-    <div className="mt-2 relative" {...rest}>
+    <div className="bg-red w-full mt-2 relative" {...rest}>
       <button
         onClick={onClickSelect}
-        onBlur={onClickSelect}
+        onBlur={onBlurSelect}
         type="button"
         aria-haspopup="listbox"
         aria-expanded="true"
         aria-labelledby="listbox-label"
-        className="relative bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        className="w-full relative bg-white dark:bg-black border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       >
         <span className="flex items-center">
-          <span className="ml-3 block truncate">{getText(selected)}</span>
+          <span className="text-black dark:text-white ml-3 block truncate">
+            {getText(selected)}
+          </span>
         </span>
         <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
           <svg
@@ -38,7 +41,7 @@ function SelectComponent({
         </span>
       </button>
       {isOpen && (
-        <div className="absolute mt-1 rounded-md bg-white shadow-lg">
+        <div className="w-full relative mt-1 rounded-md bg-white shadow-lg z-20">
           <ul
             tabIndex="-1"
             role="listbox"
