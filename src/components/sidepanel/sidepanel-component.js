@@ -1,6 +1,6 @@
-import { EditOutlined } from '@material-ui/icons';
 import { CartContainer } from 'features/cart/cart-container';
 import { CreateOrderContainer } from 'features/create-order/create-order-container';
+import { Pencil } from 'icons/pencil';
 import React from 'react';
 
 import { Item, ItemPrice, ItemTitle, Root } from './sidepanel-component-styles';
@@ -18,8 +18,11 @@ function SidePanelComponent({ orderType, onClickChangeOrderType, t }) {
         <ItemPrice className="dark:text-white">UPDATEN</ItemPrice>
       </Item>
       <CartContainer />
-      <button className="btn w-full" onClick={onClickChangeOrderType}>
-        <EditOutlined />
+      <button
+        className="btn w-full flex justify-center items-center"
+        onClick={onClickChangeOrderType}
+      >
+        <Pencil className="w-4" />
         {orderType === 'delivery' ? 'Liefern' : 'Abholen'}
       </button>
       <CreateOrderContainer />

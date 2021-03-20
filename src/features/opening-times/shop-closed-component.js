@@ -1,52 +1,52 @@
-import { Modal } from '@material-ui/core';
-import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
+import { Clock } from 'icons/clock';
 import { rem } from 'polished';
 import React from 'react';
 
 function ShopClosedComponent({ open, onClickClose }) {
-  return (
-    <div className="flex justify-center items-center absolute">
-      <Modal className="flex items-center justify-center" open={open}>
-        <div
-          style={{
-            width: rem(500),
-            margin: rem(50),
-            borderRadius: '10px',
-            background: 'red',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            alignItems: 'center',
-            padding: rem(10),
-            fontSize: '20px',
-          }}
-        >
-          <QueryBuilderIcon
-            style={{ fontweight: rem(10), fontSize: rem(70), color: 'white' }}
-          />
-          <h1
-            style={{
-              fontweight: '10',
-              fontSize: rem(30),
-              backgroundColor: 'red',
-              color: 'white',
-              textAlign: 'center',
-            }}
-          >
-            Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.
-          </h1>
-
-          <button
-            className="btn bg-white text-black hover:text-white"
-            style={{ marginTop: rem(10), marginBottom: rem(13) }}
-            onClick={onClickClose}
-          >
-            Alles klar!
-          </button>
+  return open ? (
+    <div className="overflow-visible fixed z-10 inset-0 ">
+      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
-      </Modal>
+
+        <span
+          className="hidden sm:inline-block sm:align-middle sm:h-screen"
+          aria-hidden="true"
+        >
+          &#8203;
+        </span>
+        <div
+          className="inline-block align-bottom bg-red-700 dark:bg-black rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-1/2"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-headline"
+        >
+          <div className="p-3 flex justify-center flex-col items-center">
+            <Clock className="w-14 text-white" />
+            <h1
+              style={{
+                fontweight: '10',
+                fontSize: rem(30),
+                color: 'white',
+                textAlign: 'center',
+              }}
+            >
+              Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.
+            </h1>
+
+            <button
+              className="btn bg-white text-black hover:text-white"
+              style={{ marginTop: rem(10), marginBottom: rem(13) }}
+              onClick={onClickClose}
+            >
+              Alles klar!
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  ) : null;
 }
 
 export { ShopClosedComponent };

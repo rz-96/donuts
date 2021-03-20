@@ -1,13 +1,11 @@
-import { createMuiTheme } from '@material-ui/core';
-
-export const muiTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#bf360c',
-      dark: '#870000',
-    },
-  },
-});
+// export const muiTheme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: '#bf360c',
+//       dark: '#870000',
+//     },
+//   },
+// });
 
 const theme = {
   breakpoints: {
