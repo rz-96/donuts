@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 const HeaderComponent = () => (
   <Fragment>
     <div
-      className="bg-white "
+      className="dark:bg-black"
       style={{
         width: '100%',
         display: 'flex',

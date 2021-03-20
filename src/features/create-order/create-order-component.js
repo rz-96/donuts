@@ -1,18 +1,11 @@
-import {
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  TextField,
-} from '@material-ui/core';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import { ErrorMessage } from 'components/form-input/form-input-component-styles';
 import { FormInput } from 'components/form-input/form-input-container';
 import { Label } from 'components/label/label-component-styles';
+import { RadioButtonsContainer } from 'components/radio-buttons/radio-buttons-container';
 import { PAYMENTS } from 'data/routes';
 import React, { Fragment } from 'react';
 import { request } from 'utils/fp';
-
-import { StyledButton } from './create-order-styles';
 
 function CreateOrderComponent({
   email,
@@ -60,6 +53,7 @@ function CreateOrderComponent({
   return (
     <Fragment>
       <FormInput
+        className="dark:bg-black"
         data-test="email"
         onFocus={onFocusEmail}
         onBlur={onBlurEmail}
@@ -86,8 +80,8 @@ function CreateOrderComponent({
         onChange={onChangePhone}
         label="Telefon"
       />
-      <Label>Lieferzeitpunkt</Label>
-      <TextField
+      <FormInput
+        label="Lieferzeitpunkt"
         value={orderTime}
         onChange={onChangeOrderTime}
         variant="outlined"
@@ -99,6 +93,8 @@ function CreateOrderComponent({
           shrink: true,
         }}
         inputProps={{
+          className: 'text-white',
+
           step: 300, // 5 min
         }}
       />
@@ -131,21 +127,17 @@ function CreateOrderComponent({
         onChange={onChangeComment}
         label="Kommentar"
       />
-      <div style={{ marginTop: 2 }}>
+      <div className="mt-1">
         <Label>Bezahlung</Label>
-        <RadioGroup
+
+        <RadioButtonsContainer
           value={paymentType}
+          options={[
+            { value: 'paypal', label: 'PayPal' },
+            { value: 'cash', label: 'Barzahlung' },
+          ]}
           onChange={onChangePaymentType}
-          aria-label="gender"
-          name="gender1"
-        >
-          <FormControlLabel
-            value="cash"
-            control={<Radio />}
-            label="Barzahlung"
-          />
-          <FormControlLabel value="paypal" control={<Radio />} label="PayPal" />
-        </RadioGroup>
+        />
       </div>
       {isCartEmpty && (
         <div className="flex-row">
@@ -161,11 +153,11 @@ function CreateOrderComponent({
         </div>
       )}
       {paymentType === 'cash' && (
-        <StyledButton
+        <button
           onClick={onSubmit}
           disabled={disabled}
+          className="disabled:cursor-not-allowed disabled:opacity-50 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500  sm:w-auto sm:text-sm"
           variant="contained"
-          color="primary"
         >
           {isCreating && (
             <svg
@@ -179,7 +171,7 @@ function CreateOrderComponent({
             />
           )}
           Jetzt bestellen
-        </StyledButton>
+        </button>
       )}
       {paymentType === 'paypal' && (
         <PayPalButtons

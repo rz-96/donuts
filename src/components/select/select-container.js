@@ -9,6 +9,7 @@ function Select({ values, ...rest }) {
     <SelectComponent
       isOpen={isOpen}
       values={values}
+      onBlurSelect={() => setIsOpen(false)}
       onClickSelect={() => setIsOpen(open => !open)}
       {...rest}
     />

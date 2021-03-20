@@ -25,8 +25,9 @@ function CartComponent({ cart, onClickRemove, totalPrice }) {
                     values(e.selections).map(selection => (
                       <>
                         {' '}
-                        {`${selection.text} (${selection.price.toFixed(2)}€)`}
-                        <br />{' '}
+                        <p className="dark:text-white">
+                          {`${selection.text} (${selection.price.toFixed(2)}€)`}
+                        </p>
                       </>
                     ))}
                 </>

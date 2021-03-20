@@ -7,7 +7,6 @@ const Label = styled.label`
   font-weight: 500;
   font-size: ${rem(12)};
   line-height: ${rem(16)};
-  color: ${({ theme }) => theme.colors.gray650};
   margin: ${rem(2)};
 `;
 

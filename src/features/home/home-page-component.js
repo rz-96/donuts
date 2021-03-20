@@ -23,17 +23,17 @@ const HomePageComponent = ({
   categories,
   t = noop,
 }) => (
-  <Fragment>
+  <Fragment className="dark:bg-black">
     <Head>
       <title>{t('common:ra-software')}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-4 gap-4 dark:bg-black  ">
       <ShopClosed />
       <OrderConfirmation />
       <MenuContainer />
       <ModalContainer />
-      <div className="shadow p-6 col-span-4 md:col-span-3 m-6">
+      <div className="dark:bg-black dark:text-white shadow p-6 col-span-4 md:col-span-3 m-6">
         <p className="text-3xl font-medium">Speisekarte</p>
 
         {categories.map((category, index) => (
@@ -63,10 +63,8 @@ const HomePageComponent = ({
     <style jsx>{`
       .root {
         align-items: center;
-        background: #fff;
         display: flex;
         flex-direction: column;
-        height: 100%;
         justify-content: center;
       }
     `}</style>

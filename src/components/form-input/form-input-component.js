@@ -12,7 +12,7 @@ function FormInputComponent({ label, errorMessage, ...props }) {
     <Wrapper>
       <Label>
         {label}
-        <FormInput {...props} />
+        <FormInput className="dark:bg-black" {...props} />
       </Label>
       {errorMessage && (
         <ErrorMessage data-test="error-message">{errorMessage}</ErrorMessage>

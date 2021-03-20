@@ -47,9 +47,9 @@ export const Product = styled.button`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  &:hover {
+  /* &:hover {
     background: #f3f3f3;
-  }
+  } */
 `;
 
 export const ProductTitle = styled.p`

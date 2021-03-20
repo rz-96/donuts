@@ -14,11 +14,13 @@ import {
 
 function SidePanelComponent({ orderType, onClickChangeOrderType, t }) {
   return (
-    <Root>
-      <Title>{t('common:your-order')}</Title>
+    <Root className="dark:bg-black dark:text-white">
+      <Title className="dark:text-white">{t('common:your-order')}</Title>
       <Item>
-        <ItemTitle>{t('common:delivery-fee')}</ItemTitle>
-        <ItemPrice>UPDATEN</ItemPrice>
+        <ItemTitle className="dark:text-white">
+          {t('common:delivery-fee')}
+        </ItemTitle>
+        <ItemPrice className="dark:text-white">UPDATEN</ItemPrice>
       </Item>
       <CartContainer />
       <Button

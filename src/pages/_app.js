@@ -1,4 +1,5 @@
 import 'styles/fonts.css';
+import 'styles/custom-styles.css';
 import 'tailwindcss/tailwind.css';
 
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
@@ -31,7 +32,7 @@ function MyApp({ Component, pageProps }) {
         >
           <PersistGate persistor={persistor}>
             <ThemeProvider theme={theme}>
-              <Component {...pageProps} />
+              <Component className="dark:bg-black" {...pageProps} />
             </ThemeProvider>
           </PersistGate>
         </PayPalScriptProvider>

@@ -104,8 +104,8 @@ describe('add products with menu to cart', () => {
 
   it('should choose an option', () => {
     cy.findByRole('button', { name: 'first description 20.00€' }).click();
-    cy.findByRole('button', { name: 'extraText option (1.00)€' }).click();
-    cy.findByRole('option', { name: 'option2 (1.00)€' }).click();
+    cy.findByRole('button', { name: 'option (1.00€)' }).click();
+    cy.findByRole('option', { name: 'option2 (1.00€)' }).click();
     cy.findByRole('button', { name: 'Hinzufügen' }).click();
   });
 });
