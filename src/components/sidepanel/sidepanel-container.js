@@ -1,4 +1,7 @@
-import { getOrderType } from 'features/delivery/delivery-reducer';
+import {
+  getDeliveryFee,
+  getOrderType,
+} from 'features/delivery/delivery-reducer';
 import { DELIVERY_SELECT } from 'features/modal/modal-constants';
 import { setModal } from 'features/modal/modal-reducer';
 import { compose } from 'ramda';
@@ -15,6 +18,7 @@ function SidePanel({ openModal, ...rest }) {
 
 const mapStateToProps = state => ({
   orderType: getOrderType(state),
+  deliveryFee: getDeliveryFee(state),
 });
 
 const SidePanelContainer = compose(

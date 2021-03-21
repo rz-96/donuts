@@ -9,7 +9,7 @@ function SelectComponent({
   ...rest
 }) {
   return (
-    <div className="bg-red w-full mt-2 relative" {...rest}>
+    <div className="w-full mt-2 relative" {...rest}>
       <button
         onClick={onClickSelect}
         onBlur={onBlurSelect}
