@@ -32,7 +32,7 @@ describe('delivery select component', () => {
   });
 });
 
-describe.only('delivery place', () => {
+describe('delivery place', () => {
   beforeEach(() => {
     cy.intercept('GET', PLACES, {
       data: [
@@ -50,7 +50,7 @@ describe.only('delivery place', () => {
     cy.findByRole('button', { name: 'Bestätigen' }).click();
   });
 
-  it.only('render the delivery fee', () => {
+  it('render the delivery fee', () => {
     cy.findByText('28.22€').should('exist');
   });
 });

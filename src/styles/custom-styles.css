@@ -15,7 +15,7 @@ body,
 }
 
 .btn {
-  @apply disabled:cursor-not-allowed disabled:opacity-50 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-primary text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500  sm:w-full sm:text-sm;
+  @apply disabled:cursor-not-allowed disabled:opacity-50 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-primary text-base font-medium text-white hover:bg-brand-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-primary sm:text-sm;
 }
 
 body {

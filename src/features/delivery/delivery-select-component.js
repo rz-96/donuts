@@ -40,14 +40,14 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open }) {
                 name="Abholen"
                 onClick={onClickPickup}
                 type="button"
-                className="w-1/2 m-2 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-lg font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:text-lg"
+                className="w-1/2 m-2 btn"
               >
                 Abholen
               </button>
               <button
                 onClick={onClickDelivery}
                 type="button"
-                className="w-1/2 m-2 border-red-600 inline-flex justify-center rounded-md border shadow-sm px-4 py-2 font-medium text-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:text-lg"
+                className="w-1/2 m-2 btn"
               >
                 Liefern
               </button>
