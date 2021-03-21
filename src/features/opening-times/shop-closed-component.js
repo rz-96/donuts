@@ -17,7 +17,7 @@ function ShopClosedComponent({ open, onClickClose }) {
           &#8203;
         </span>
         <div
-          className="inline-block align-bottom bg-red-700 dark:bg-black rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-1/2"
+          className="inline-block align-bottom bg-brand-primary-dark dark:bg-black rounded-lg text-left overflow-visible shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-1/2"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-headline"

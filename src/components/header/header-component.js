@@ -13,9 +13,15 @@ const HeaderComponent = () => (
         alignItems: 'center',
       }}
     >
-      <div style={{ width: '100%' }} className="border-2 border-red-600" />
+      <div
+        style={{ width: '100%' }}
+        className="border-2 border-brand-primary"
+      />
       <img className="sm:w-1/2 w-1/2" src="/logo.png" alt="donut company" />
-      <div style={{ width: '100%' }} className="border-2 border-red-600" />
+      <div
+        style={{ width: '100%' }}
+        className="border-2 border-brand-primary"
+      />
     </div>
   </Fragment>
 );

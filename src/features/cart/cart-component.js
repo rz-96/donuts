@@ -32,7 +32,7 @@ function CartComponent({ cart, onClickRemove, totalPrice }) {
                 name="delete"
                 data-test="delete-button"
               >
-                <Trash className="w-3/4 text-red-900" />
+                <Trash className="w-3/4 text-red-600" />
               </button>
             </div>
           </div>

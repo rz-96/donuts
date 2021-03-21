@@ -28,7 +28,7 @@ function SidePanelComponent({
       )}
       <CartContainer />
       <button
-        className="btn w-1/2 flex justify-center items-center"
+        className="btn w-full flex justify-center items-center"
         onClick={onClickChangeOrderType}
       >
         <Pencil className="w-4 mr-2" />
