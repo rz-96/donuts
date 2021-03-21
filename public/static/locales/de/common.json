@@ -1,6 +1,6 @@
 {
-  "ra-software":"RA-Software",
-  "company-name":"Donut Company",
-  "your-order": "Deine Bestellung",
-  "delivery-fee": "Lieferungsgebühr"
+  "company-name": "Donut Company",
+  "delivery-fee": "Liefergebühr",
+  "ra-software": "RA-Software",
+  "your-order": "Deine Bestellung"
 }

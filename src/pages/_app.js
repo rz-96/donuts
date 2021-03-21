@@ -1,6 +1,6 @@
 import 'styles/fonts.css';
-import 'styles/custom-styles.css';
 import 'tailwindcss/tailwind.css';
+import 'styles/custom-styles.css';
 
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import App from 'next/app.js';

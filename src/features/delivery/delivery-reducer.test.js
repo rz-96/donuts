@@ -4,6 +4,7 @@ import { describe } from 'riteway';
 
 import {
   getAddress,
+  getDeliveryFee,
   getIsAddressModalOpen,
   getIsCreating,
   getIsMinValueReached,
@@ -425,6 +426,25 @@ describe('delivery reducer', async assert => {
       should: 'return false',
       actual: getIsMinValueReached(state),
       expected: true,
+    });
+  }
+
+  assert({
+    given: 'no state and a get delivery fee selector',
+    should: 'return the delivery fee',
+    actual: getDeliveryFee(rootReducer(undefined, {})),
+    expected: 0,
+  });
+  {
+    const state = rootReducer(
+      undefined,
+      setSelectedPlace({ extraDeliveryFee: 20 }),
+    );
+    assert({
+      given: 'state and a get delivery fee selector',
+      should: 'return the delivery fee',
+      actual: getDeliveryFee(state),
+      expected: 20,
     });
   }
 });

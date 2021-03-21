@@ -1,3 +1,5 @@
+import { PLACES } from '../../data/routes';
+
 describe('delivery select component', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -27,5 +29,28 @@ describe('delivery select component', () => {
 
     cy.findByRole('textbox', { name: 'Straße' }).should('exist');
     cy.findByRole('textbox', { name: 'Stadt' }).should('exist');
+  });
+});
+
+describe.only('delivery place', () => {
+  beforeEach(() => {
+    cy.intercept('GET', PLACES, {
+      data: [
+        {
+          extraDeliveryFee: 28.22,
+          minCartAmount: 20,
+          postcode: '22222',
+          city: 'test',
+        },
+      ],
+    }).as('getPlaces');
+    cy.visit('/');
+    cy.wait('@getPlaces');
+    cy.findByRole('button', { name: 'Liefern' }).click();
+    cy.findByRole('button', { name: 'Bestätigen' }).click();
+  });
+
+  it.only('render the delivery fee', () => {
+    cy.findByText('28.22€').should('exist');
   });
 });

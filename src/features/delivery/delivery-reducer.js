@@ -84,8 +84,15 @@ const getIsMinValueReached = createSelector(
   (cartPrice, minValue) => cartPrice >= minValue,
 );
 
+const getDeliveryFee = pipe(
+  getDeliverySlice,
+  prop('selectedPlace'),
+  propOr(0, 'extraDeliveryFee'),
+);
+
 export {
   getAddress,
+  getDeliveryFee,
   getIsAddressModalOpen,
   getIsCreating,
   getIsMinValueReached,
