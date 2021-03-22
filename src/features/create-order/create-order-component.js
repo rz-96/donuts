@@ -8,6 +8,7 @@ import React, { Fragment } from 'react';
 import { request } from 'utils/fp';
 
 function CreateOrderComponent({
+  t,
   email,
   disabled,
   onChangeEmail,
@@ -47,8 +48,8 @@ function CreateOrderComponent({
   onBlurCity,
   isCartEmpty,
   isCreating,
-  minValue,
-  isMinValueReached,
+
+  isMinValueReached, //TODO: add minValue again
 }) {
   return (
     <Fragment>
@@ -60,7 +61,7 @@ function CreateOrderComponent({
         errorMessage={emailError}
         value={email}
         onChange={onChangeEmail}
-        label="E-Mail"
+        label={t('contact-details:mail')}
       />
       <FormInput
         data-test="name"
@@ -78,10 +79,10 @@ function CreateOrderComponent({
         onFocus={onFocusPhone}
         onBlur={onBlurPhone}
         onChange={onChangePhone}
-        label="Telefon"
+        label={t('contact-details:phone')}
       />
       <FormInput
-        label="Lieferzeitpunkt"
+        label={t('contact-details:delivery-time')}
         value={orderTime}
         onChange={onChangeOrderTime}
         variant="outlined"
@@ -125,31 +126,27 @@ function CreateOrderComponent({
         data-test="comment"
         value={comment}
         onChange={onChangeComment}
-        label="Kommentar"
+        label={t('contact-details:comment')}
       />
       <div className="mt-1">
         <Label>Bezahlung</Label>
-
         <RadioButtonsContainer
           value={paymentType}
           options={[
             { value: 'paypal', label: 'PayPal' },
-            { value: 'cash', label: 'Barzahlung' },
+            { value: 'cash', label: t('common:payment-method') },
           ]}
           onChange={onChangePaymentType}
         />
       </div>
       {isCartEmpty && (
         <div className="flex-row">
-          <ErrorMessage>Sie haben keine Produkte im Warenkorb.</ErrorMessage>
+          <ErrorMessage>{t('cart:cart-empty')}</ErrorMessage>
         </div>
       )}
       {!isMinValueReached && (
         <div>
-          <ErrorMessage>
-            Sie haben noch nicht den Mindestbestellwert von{' '}
-            {minValue.toFixed(2)}€ erreicht.
-          </ErrorMessage>
+          <ErrorMessage>{t('cart:cart-min-value-not-reached')}</ErrorMessage>
         </div>
       )}
       {paymentType === 'cash' && (
@@ -165,7 +162,7 @@ function CreateOrderComponent({
               viewBox="0 0 24 24"
             />
           )}
-          Jetzt bestellen
+          {t('common:order-now')}
         </button>
       )}
       {paymentType === 'paypal' && (

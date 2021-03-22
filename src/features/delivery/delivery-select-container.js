@@ -4,6 +4,7 @@ import transformProps from 'hocs/transform-props';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 
+import { withTranslation } from '../../../i18n';
 import { setPickup } from './delivery-reducer';
 import { DeliverySelectComponent } from './delivery-select-component';
 
@@ -21,5 +22,6 @@ const transform = ({ setModal, dismissModal, setPickup, ...rest }) => ({
 
 export const DeliverySelectContainer = compose(
   connect(undefined, { dismissModal, setPickup, setModal }),
+  withTranslation(),
   transformProps(transform),
 )(DeliverySelectComponent);

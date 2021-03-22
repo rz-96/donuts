@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DeliverySelectComponent({ onClickDelivery, onClickPickup, open }) {
+function DeliverySelectComponent({ onClickDelivery, onClickPickup, open, t }) {
   return (
     open && (
       <div className="overflow-visible fixed z-10 inset-0 ">
@@ -42,8 +42,9 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open }) {
                 type="button"
                 className="w-1/2 m-2 btn"
               >
-                Abholen
+                {t('common:pick-up')}
               </button>
+
               <button
                 onClick={onClickDelivery}
                 type="button"

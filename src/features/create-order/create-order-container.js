@@ -13,9 +13,11 @@ import moment from 'moment';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 
+import { withTranslation } from '../../../i18n';
 import { CreateOrderComponent } from './create-order-component';
 import { capturePayPal, placeOrder } from './order-saga';
 import { createOrder } from './validation-schema';
+
 const formikProps = {
   validateOnMount: true,
   mapPropsToValues: ({ orderType }) => ({
@@ -138,6 +140,7 @@ export const CreateOrderContainer = compose(
     capturePayPal,
     placeOrder,
   }),
+  withTranslation(),
   withFormik(formikProps),
   transformProps(mapFormikBagToProps),
 )(CreateOrderComponent);
