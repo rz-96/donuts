@@ -34,7 +34,7 @@ const HomePageComponent = ({
       <MenuContainer />
       <ModalContainer />
       <div className="dark:bg-black dark:text-white shadow p-6 col-span-4 md:col-span-3 m-6">
-        <p className="text-3xl font-medium">Speisekarte</p>
+        <p className="text-3xl font-medium">{t('common:menu-title')}</p>
 
         {categories.map((category, index) => (
           <div key={index}>

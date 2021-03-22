@@ -2,5 +2,15 @@
   "company-name": "Donut Company",
   "delivery-fee": "Liefergebühr",
   "ra-software": "RA-Software",
-  "your-order": "Deine Bestellung"
+  "your-order": "Deine Bestellung",
+  "payment-method":"Barzahlung",
+  "currency":"€",
+  "Total-amount":"Gesamtbetrag",
+  "value added tax":"inkl. Mwst.",
+  "pick-up":"Abholen",
+  "order-now":"Jetzt bestellen",
+  "menu-title":"Speisekarte",
+  "payment":"Bezahlung"
+
+  
 }
