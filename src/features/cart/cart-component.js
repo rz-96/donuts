@@ -2,7 +2,7 @@ import { Trash } from 'icons/trash';
 import { values } from 'ramda';
 import React from 'react';
 
-function CartComponent({ cart, onClickRemove, totalPrice }) {
+function CartComponent({ t, cart, onClickRemove, totalPrice }) {
   return (
     <div>
       {cart.map((e, i) => (
@@ -44,36 +44,18 @@ function CartComponent({ cart, onClickRemove, totalPrice }) {
       {totalPrice > 0 && (
         <div className="my-3 flex flex-row w-full">
           <div className="w-5/6">
-            <p className="font-normal">Gesamtbetrag</p>
-            <p className="font-thin text-xs">{'inkl. Mwst.'}</p>
+            <p className="font-normal">{t('common:total-amount')}</p>
+            <p className="font-thin text-xs">{t('common:inclusive-tax')}</p>
           </div>
 
           <div className="items-center w-1/6  justify-center flex">
-            <p>{totalPrice.toFixed(2)}€</p>
+            <p>
+              {totalPrice.toFixed(2)}
+              {t('common:currency')}
+            </p>
           </div>
         </div>
       )}
-      {/* {totalPrice > 0 && (
-        <ListItem alignItems="flex-start">
-          <ListItemText
-            primary={'Gesamtbetrag'}
-            secondary={
-              <React.Fragment>
-                <Typography
-                  component="span"
-                  variant="body2"
-                  color="textPrimary"
-                ></Typography>
-                {'inkl. Mwst.'}
-              </React.Fragment>
-            }
-          />
-
-          <ListItemSecondaryAction>
-            <Typography>{totalPrice.toFixed(2)}€</Typography>
-          </ListItemSecondaryAction>
-        </ListItem>
-      )} */}
     </div>
   );
 }

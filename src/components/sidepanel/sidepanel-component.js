@@ -7,6 +7,7 @@ import { Item, ItemPrice, ItemTitle, Root } from './sidepanel-component-styles';
 
 function SidePanelComponent({
   orderType,
+  place,
   deliveryFee,
   onClickChangeOrderType,
   t,
@@ -33,7 +34,9 @@ function SidePanelComponent({
       >
         <Pencil className="w-4 mr-2" />
 
-        {orderType === 'delivery' ? 'Liefern' : 'Abholen'}
+        {orderType === 'delivery'
+          ? t('common:deliver-to', { postcode: place.postcode })
+          : t('common:pick-up')}
       </button>
       <CreateOrderContainer />
     </Root>

@@ -48,9 +48,10 @@ function CreateOrderComponent({
   onBlurCity,
   isCartEmpty,
   isCreating,
-
+  minValue,
   isMinValueReached, //TODO: add minValue again
 }) {
+  console.log('disabled', disabled);
   return (
     <Fragment>
       <FormInput
@@ -58,7 +59,7 @@ function CreateOrderComponent({
         data-test="email"
         onFocus={onFocusEmail}
         onBlur={onBlurEmail}
-        errorMessage={emailError}
+        errorMessage={t(emailError)}
         value={email}
         onChange={onChangeEmail}
         label={t('contact-details:mail')}
@@ -69,17 +70,17 @@ function CreateOrderComponent({
         onChange={onChangeName}
         onFocus={onFocusName}
         onBlur={onBlurName}
-        errorMessage={nameError}
+        errorMessage={t(nameError)}
         label="Name"
       />
       <FormInput
         data-test="phone"
         value={phone}
-        errorMessage={phoneError}
+        errorMessage={t(phoneError)}
         onFocus={onFocusPhone}
         onBlur={onBlurPhone}
         onChange={onChangePhone}
-        label={t('contact-details:phone')}
+        label={t('contact-details:phone-number')}
       />
       <FormInput
         label={t('contact-details:delivery-time')}
@@ -106,7 +107,7 @@ function CreateOrderComponent({
             onChange={onChangeStreet}
             onFocus={onFocusStreet}
             onBlur={onBlurStreet}
-            errorMessage={streetError}
+            errorMessage={t(streetError)}
             data-test="street"
             label="Straße"
           />
@@ -116,7 +117,7 @@ function CreateOrderComponent({
             onChange={onChangeCity}
             onFocus={onFocusCity}
             onBlur={onBlurCity}
-            errorMessage={cityError}
+            errorMessage={t(cityError)}
             data-test="city"
             label="Stadt"
           />
@@ -129,11 +130,11 @@ function CreateOrderComponent({
         label={t('contact-details:comment')}
       />
       <div className="mt-1">
-        <Label>Bezahlung</Label>
+        <Label>{t('common:payment')}</Label>
         <RadioButtonsContainer
           value={paymentType}
           options={[
-            { value: 'paypal', label: 'PayPal' },
+            { value: 'paypal', label: t('common:paypal') },
             { value: 'cash', label: t('common:payment-method') },
           ]}
           onChange={onChangePaymentType}
@@ -146,7 +147,11 @@ function CreateOrderComponent({
       )}
       {!isMinValueReached && (
         <div>
-          <ErrorMessage>{t('cart:cart-min-value-not-reached')}</ErrorMessage>
+          <ErrorMessage>
+            {t('cart:cart-min-value-not-reached', {
+              minValue: `${minValue.toFixed(2)}€`,
+            })}
+          </ErrorMessage>
         </div>
       )}
       {paymentType === 'cash' && (

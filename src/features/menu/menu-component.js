@@ -10,6 +10,7 @@ function MenuComponent({
   onClickAdd,
   onChangeOption,
   onClickAbort,
+  t,
 }) {
   return isOpen ? (
     <div
@@ -46,7 +47,7 @@ function MenuComponent({
             }}
           >
             <p className="text-2xl font-semibold dark:text-white">
-              {product.menu ? product.menu.title : 'Produkt hinzufügen'}
+              {product.menu ? product.menu.title : t('cart:add-product')}
             </p>
             <div
               style={{
@@ -75,34 +76,11 @@ function MenuComponent({
                       getText={e => `${e.text} (${e.price.toFixed(2)}€)`}
                       values={extra.options}
                     />
-                    {/* <Select
-                    className="dark:text-white"
-                    style={{ width: '100%' }}
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={getOption(extra._id)._id}
-                    onChange={e =>
-                      onChangeOption({
-                        optionId: e.target.value,
-                        extraId: extra._id,
-                      })
-                    }
-                  >
-                    {extra.options.map((e, i) => (
-                      <MenuItem
-                        className="dark:text-white"
-                        key={i}
-                        value={e._id}
-                      >
-                        {`${e.text} (${e.price.toFixed(2)})€`}
-                      </MenuItem>
-                    ))}
-                  </Select> */}
                   </div>
                 ))}
               <div className="flex flex-row mt-4">
                 <button className="btn" onClick={onClickAdd}>
-                  Hinzufügen
+                  {t('cart:add')}
                 </button>
                 <button
                   onClick={onClickAbort}
@@ -114,7 +92,7 @@ function MenuComponent({
                   className="border-solid bg-white dark:bg-black dark:text-white"
                   size="large"
                 >
-                  Abbrechen
+                  {t('common:abort')}
                 </button>
               </div>
             </div>

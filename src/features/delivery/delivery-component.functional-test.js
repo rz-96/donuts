@@ -1,4 +1,5 @@
 import { PLACES } from '../../data/routes';
+import { t } from '../../tests/i18n';
 
 describe('delivery select component', () => {
   beforeEach(() => {
@@ -18,14 +19,14 @@ describe('delivery select component', () => {
   it('change the delivery type', () => {
     cy.findByRole('button', { name: 'Abholen' }).click();
     cy.findByRole('button', { name: 'Liefern' }).click();
-    cy.findByRole('button', { name: 'Bestätigen' }).click();
+    cy.findByRole('button', { name: t('common:confirm') }).click();
     cy.findByRole('button', { name: 'Liefern' }).should('exist');
   });
 
   it('render the delivery info inputs', () => {
     cy.findByRole('button', { name: 'Abholen' }).click();
     cy.findByRole('button', { name: 'Liefern' }).click();
-    cy.findByRole('button', { name: 'Bestätigen' }).click();
+    cy.findByRole('button', { name: t('common:confirm') }).click();
 
     cy.findByRole('textbox', { name: 'Straße' }).should('exist');
     cy.findByRole('textbox', { name: 'Stadt' }).should('exist');
@@ -47,7 +48,7 @@ describe('delivery place', () => {
     cy.visit('/');
     cy.wait('@getPlaces');
     cy.findByRole('button', { name: 'Liefern' }).click();
-    cy.findByRole('button', { name: 'Bestätigen' }).click();
+    cy.findByRole('button', { name: t('common:confirm') }).click();
   });
 
   it('render the delivery fee', () => {

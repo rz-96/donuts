@@ -70,7 +70,7 @@ const mapFormikBagToProps = ({
   isMinValueReached,
   ...rest
 }) => ({
-  disabled: !isValid || isCartEmpty,
+  disabled: !isValid || isCartEmpty || isMinValueReached,
   email,
   emailError: touched.email ? errors.email : '',
   name,

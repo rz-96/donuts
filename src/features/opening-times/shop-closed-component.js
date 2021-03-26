@@ -2,7 +2,7 @@ import { Clock } from 'icons/clock';
 import { rem } from 'polished';
 import React from 'react';
 
-function ShopClosedComponent({ open, onClickClose }) {
+function ShopClosedComponent({ open, onClickClose, t }) {
   return open ? (
     <div className="overflow-visible fixed z-10 inset-0 ">
       <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -32,7 +32,7 @@ function ShopClosedComponent({ open, onClickClose }) {
                 textAlign: 'center',
               }}
             >
-              Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.
+              {t('common:shop-closed')}
             </h1>
 
             <button
@@ -40,7 +40,7 @@ function ShopClosedComponent({ open, onClickClose }) {
               style={{ marginTop: rem(10), marginBottom: rem(13) }}
               onClick={onClickClose}
             >
-              Alles klar!
+              {t('common:alright')}
             </button>
           </div>
         </div>

@@ -80,8 +80,9 @@ const getMinValue = pipe(
 );
 
 const getIsMinValueReached = createSelector(
-  [getCartPrice, getMinValue],
-  (cartPrice, minValue) => cartPrice >= minValue,
+  [getCartPrice, getMinValue, getOrderType],
+  (cartPrice, minValue, orderType) =>
+    orderType === 'pickup' ? true : cartPrice >= minValue,
 );
 
 const getDeliveryFee = pipe(

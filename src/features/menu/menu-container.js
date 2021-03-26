@@ -1,6 +1,8 @@
 import { addToCart } from 'features/cart/cart-reducer';
+import compose from 'ramda/src/compose';
 import { connect } from 'react-redux';
 
+import { withTranslation } from '../../../i18n';
 import { MenuComponent } from './menu-component';
 import {
   getIsMenuOpen,
@@ -51,10 +53,13 @@ const mapStateToProps = state => ({
   selections: getMenuSelections(state),
 });
 
-const MenuContainer = connect(mapStateToProps, {
-  setIsMenuOpen,
-  addToCart,
-  setSelectedOption,
-})(Menu);
+const MenuContainer = compose(
+  withTranslation(),
+  connect(mapStateToProps, {
+    setIsMenuOpen,
+    addToCart,
+    setSelectedOption,
+  }),
+)(Menu);
 
 export { MenuContainer };

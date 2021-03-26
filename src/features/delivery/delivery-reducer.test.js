@@ -415,6 +415,19 @@ describe('delivery reducer', async assert => {
   }
 
   {
+    const actions = [setPickup()];
+
+    const state = actions.reduce(rootReducer, {});
+
+    assert({
+      given: 'pickup as delivery type and a is min value reached selector',
+      should: 'return true',
+      actual: getIsMinValueReached(state),
+      expected: true,
+    });
+  }
+
+  {
     const actions = [
       addToCart({ price: 20 }),
       setSelectedPlace({ minCartAmount: 19 }),
