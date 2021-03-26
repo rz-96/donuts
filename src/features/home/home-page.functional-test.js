@@ -26,7 +26,7 @@ describe('enter order details', () => {
   });
 });
 
-describe.only('given products, opening times and deliveryType = pickup', () => {
+describe('given products, opening times and deliveryType = pickup', () => {
   beforeEach(() => {
     cy.intercept('GET', PRODUCTS, {
       data: [{ title: 'first', description: 'description', price: 20 }],
@@ -45,7 +45,7 @@ describe.only('given products, opening times and deliveryType = pickup', () => {
     cy.get('[data-test=pickup]').click();
   });
 
-  it.only('should NOT render the min cart amount not reached error message', () => {
+  it('should NOT render the min cart amount not reached error message', () => {
     cy.contains(
       'p',
       t('cart:cart-min-value-not-reached', { minValue: 12 }),
@@ -78,7 +78,7 @@ describe.only('given products, opening times and deliveryType = pickup', () => {
   });
 });
 
-describe.only('given deliveryType = delivery', () => {
+describe('given deliveryType = delivery', () => {
   const postcode = 12345;
   const city = 'Aachen';
   const minCartAmount = 2.0;
@@ -125,20 +125,6 @@ describe.only('given deliveryType = delivery', () => {
 
     cy.findByRole('button', { name: t('common:order-now') }).should(
       'be.disabled',
-    );
-  });
-
-  it('add many products, should not be disabled', () => {
-    cy.findByRole('button', { name: 'first description 1.00€' }).click();
-    cy.findByRole('button', { name: t('cart:add') }).click();
-
-    cy.findByRole('button', { name: 'first description 1.00€' }).click();
-    cy.findByRole('button', { name: t('cart:add') }).click();
-
-    cy.findByText('1 x first - 1.00€').should('exist');
-
-    cy.findByRole('button', { name: t('common:order-now') }).should(
-      'no.be.disabled',
     );
   });
 });
@@ -202,16 +188,14 @@ describe('given shop closed', () => {
     cy.get('[data-test=pickup]').click();
   });
 
-  it('should not add a product to the cart', () => {
+  it('should not add a product to the cart and display an error message', () => {
     cy.findByRole('button', { name: 'first description 20.00€' }).click();
     cy.findByText(
       'Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.',
     ).should('exist');
-  });
 
-  it('should exit the shop closed modal', () => {
-    cy.findByRole('button', { name: 'first description 20.00€' }).click();
     cy.findByRole('button', { name: 'Alles klar!' }).click();
+
     cy.findByText(
       'Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.',
     ).should('not.exist');
