@@ -1,16 +1,23 @@
 {
+  "abort": "Abbrechen",
+  "alright": "Alles klar!",
   "company-name": "Donut Company",
+  "confirm": "Bestätigen",
+  "currency": "€",
+  "deliver-to": "Liefern nach {{postcode}}",
+  "delivery": "Liefern",
   "delivery-fee": "Liefergebühr",
+  "inclusive-tax": "inkl. Mwst.",
+  "menu-title": "Speisekarte",
+  "order-now": "Jetzt bestellen",
+  "payment": "Bezahlung",
+  "payment-method": "Barzahlung",
+  "paypal": "PayPal",
+  "pick-up": "Abholen",
+  "pick-up-or-deliver": "Abholen oder Liefern?",
   "ra-software": "RA-Software",
-  "your-order": "Deine Bestellung",
-  "payment-method":"Barzahlung",
-  "currency":"€",
-  "Total-amount":"Gesamtbetrag",
-  "value added tax":"inkl. Mwst.",
-  "pick-up":"Abholen",
-  "order-now":"Jetzt bestellen",
-  "menu-title":"Speisekarte",
-  "payment":"Bezahlung"
-
-  
+  "shop-closed": "Wir haben momentan geschlossen. Morgen sind wir wieder für Sie da.",
+  "total-amount": "Gesamtbetrag",
+  "value added tax": "inkl. Mwst.",
+  "your-order": "Deine Bestellung"
 }

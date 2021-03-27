@@ -29,7 +29,7 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open, t }) {
                     className="text-2xl text-center leading-6 font-medium text-gray-900 dark:text-white"
                     id="modal-headline"
                   >
-                    Abholen oder Liefern?
+                    {t('common:pick-up-or-deliver')}
                   </h3>
                 </div>
               </div>
@@ -37,7 +37,7 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open, t }) {
             <div className="flex justify-center rounded-lg bg-white  dark:bg-black px-4 py-3 sm:px-6 ">
               <button
                 data-test="pickup"
-                name="Abholen"
+                name={t('common:pick-up')}
                 onClick={onClickPickup}
                 type="button"
                 className="w-1/2 m-2 btn"
@@ -46,11 +46,12 @@ function DeliverySelectComponent({ onClickDelivery, onClickPickup, open, t }) {
               </button>
 
               <button
+                data-test="delivery"
                 onClick={onClickDelivery}
                 type="button"
                 className="w-1/2 m-2 btn"
               >
-                Liefern
+                {t('common:delivery')}
               </button>
             </div>
           </div>

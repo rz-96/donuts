@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import Input from '../textinput/text-input-component';
 
-const ErrorMessage = styled.div`
+const ErrorMessage = styled.p`
   color: #cc0033;
   display: inline-block;
   font-size: rem(15);
-  line-height: 15px;
+  line-height: 16px;
 `;
 
 const FormInput = styled(Input)`

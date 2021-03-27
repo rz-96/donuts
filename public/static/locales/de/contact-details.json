@@ -1,7 +1,12 @@
 {
-  "mail":"E-Mail",
-  "phone-number":"Telefon",
-  "delivery-time":"Lieferzeitpunkt",
-  "comment":"Kommentar"
-
+  "city-required": "Stadt erforderlich",
+  "comment": "Kommentar",
+  "delivery-time": "Lieferzeitpunkt",
+  "email-invalid": "Muss eine gültige E-Mail sein",
+  "email-required": "Muss ausgefüllt werden",
+  "mail": "E-Mail",
+  "name-required": "Name erforderlich",
+  "phone-number": "Telefon",
+  "phone-number-required": "Telefonnummer erforderlich",
+  "street-required": "Straße erforderlich"
 }

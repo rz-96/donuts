@@ -1,3 +1,5 @@
+import { withTranslation } from '../../../i18n';
 import { ShopClosedComponent } from './shop-closed-component';
 
-export { ShopClosedComponent as ShopClosed };
+const ShopClosedContainer = withTranslation()(ShopClosedComponent);
+export { ShopClosedContainer as ShopClosed };
