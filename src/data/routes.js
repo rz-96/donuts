@@ -1,4 +1,4 @@
-export const ROOT = 'https://be-shopsystem.herokuapp.com/';
+export const ROOT = 'https://be-mytires.herokuapp.com/';
 
 // export const ROOT = 'http://localhost:3030/';
 
