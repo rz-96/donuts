@@ -5,7 +5,7 @@ import { request } from 'utils/fp';
 import { setProducts } from './products-reducer';
 
 function* handleFetchProducts() {
-  const { data } = yield call(request, { route: PRODUCTS });
+  const data = yield call(request, { route: PRODUCTS });
   yield put(setProducts(data));
 }
 
